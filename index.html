@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .quotes {
+            transition: opacity 0.5s;
+           
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="quotes">
+
+    </div>
+
+    <script>
+        const quote = document.querySelector('.quotes');
+        const quoteCollections = ["Silence is gold", "you can hack with html","lorem html", "no pain, no gain"];
+         // 0 and 100
+       // console.log(indexNumber);
+      
+        function showRandomQuote(){
+            quote.style.opacity = 0;
+           setTimeout(()=>{
+            const indexNumber = Math.floor(Math.random()*quoteCollections.length)
+            quote.textContent = quoteCollections[indexNumber];
+            quote.style.opacity = 1;
+           },1000) 
+        }
+
+        setInterval(showRandomQuote,2000)
+
+    </script>
+</body>
+
+</html>
