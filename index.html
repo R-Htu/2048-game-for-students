@@ -1,38 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        .quotes {
-            transition: opacity 0.5s;
-           
-        }
-    </style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #quizContainer {
+            transition: opacity 0.3s;
+        }
+    </style>
 </head>
-<body>
-    <div class="quotes">
 
-    </div>
+<body>
+    <h1><a href="game2048.html">2048 game lessons</a></h1>
+
+    <div id="quizContainer"> </div>
+
+    <button onclick="stopQuote()">Stop</button>
+    <button onclick="continueQuote()">Continue</button>
 
     <script>
-        const quote = document.querySelector('.quotes');
-        const quoteCollections = ["Silence is gold", "you can hack with html","lorem html", "no pain, no gain"];
-         // 0 and 100
-       // console.log(indexNumber);
+        /*  
+        Week 1 (2025/09/19) Practical Course Progress - Sorting the Students' Scores (SSS)
+Sorting the Students' Scores (SSS)
+
+Problem
+
+       Write a C++ program to sort the student records according to their scores. Define a Student class (or struct) which records the scores of Mathematic, English , and Chinese classes. 
+       Please sort the students' records in a decreasing order by the average of three scores. 
+       M = 70, E = 90, C = 100 
+       averA = (M + E + C)/ 3.0 = 260/3.0 = 86.67
+       M = 50, E = 50, C = 90 
+       averB = 190/3 = 63.33
+         M = 90, E = 70, C = 100 
+        averC = 86.67
+
+         M = 50, E = 90, C = 50 
+         averD = 63.33
+
+       If two students have the same average score, sort them by the higher score of Mathematic class first,
+        and then by the score of English class.
+ 
+
+Requirement 1. Use C++ new (delete) operators for dynamic memory allocation (deallocation) of a Student sturct array.      
+    2. Use std::sort() in <algorithm> header file.
+       
+
+Input
+
+    The input is an integer N followed by N students' scores line by line. The input format of each student's record is shown below:
+
+M: xxx E: xxx C: xxx
+
+Output
+       The output format is shown as the Sample Output.
+
+Sample Input Sample Output
+
+5↵
+M: 70 E: 90 C: 80↵
+M: 90 E: 80 C: 70↵
+M: 100 E: 60 C: 70↵
+M: 85 E: 95 C: 60↵
+M: 85 E: 85 C: 100↵ 1
+ [M: 85, E: 85, C: 100] Average = 90.00↵
+2 [M: 90, E: 80, C: 70] Average = 80.00↵
+3 [M: 85, E: 95, C: 60] Average = 80.00↵
+4 [M: 70, E: 90, C: 80] Average = 80.007↵
+5 [M: 100, E: 60, C: 70] Average = 76.67↵
+        
+        
+        */
+
+
+
+
+        const quotes = ["Silence is golden", "No pain, no gain", "Time and tide wait for no man", "Time is Gold "]
+        const quizContainer = document.querySelector('#quizContainer');
+
+        setInterval(()=>{
+            const randomIndex = Math.floor(Math.random()*quotes.length);
+            quizContainer.textContent = quotes[randomIndex]
+        },2000)
       
-        function showRandomQuote(){
-            quote.style.opacity = 0;
-           setTimeout(()=>{
-            const indexNumber = Math.floor(Math.random()*quoteCollections.length)
-            quote.textContent = quoteCollections[indexNumber];
-            quote.style.opacity = 1;
-           },1000) 
-        }
-
-        setInterval(showRandomQuote,2000)
-
     </script>
 </body>
 
