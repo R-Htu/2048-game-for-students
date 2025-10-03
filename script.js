@@ -18,7 +18,7 @@ let options = [
 ];
 let matrix = [];
 let prevMatrix;
-/*
+
 let colors = [
     "#caf0f8",
     "#90e0ef",
@@ -358,4 +358,4 @@ function updateColors() {
             }
         }
     }
-}*/
+}
